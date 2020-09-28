@@ -39,6 +39,7 @@
       }
       .subtitle{
         font-size:14px;
+        font-weight: 600;
       }
       #console {
         position: absolute;
@@ -325,11 +326,12 @@
         transition: all 1s ease;
         text-decoration: underline !important;
       }
-      .mapboxgl-popup {
-        max-width: 300px !important;
+      .mapboxgl-popup,.mapboxgl-popup.one,.mapboxgl-popup.two,.mapboxgl-popup.three {
         font-family: 'Work Sans', sans-serif;
         text-align: left;
         z-index: 20;
+        max-width: 200px !important;
+        min-width: 200px !important;
         /* transform:none !important; */
       }
       .mapboxgl-popup-content {
@@ -366,7 +368,7 @@
         margin: 0;
         display: block;
         font-size:14px;
-        padding: 10px 3px 10px 10px;
+        padding: 10px;
         font-weight: 400;
       }
       .mapboxgl-container {
@@ -417,7 +419,10 @@
         font-size:12px;
       }
       .marginTop10{
-        margin-top: 10px;
+        margin-top: -5px;
+      }
+      .marginTop20{
+        margin-top: 20px;
       }
       .button {
         margin-bottom: 10px;
@@ -491,9 +496,7 @@
       .popupTitle{
         font-family: 'Eczar', serif;
       }
-      .mapboxgl-popup-anchor-top>.mapboxgl-popup-tip {
-      /* border-bottom-color: rgb(61, 59, 59); */
-      }
+
       #loading {
       top: 0;
       left: 0;
@@ -543,10 +546,10 @@
       @media screen and (max-width: 800px) {
 
         #console {
-          width: 250px;
+          width: 200px;
         }
         .active{
-          transform:translate3d(-230px,0,0);
+          transform:translate3d(-180px,0,0);
         }
         .label{
           font-size:10px;
@@ -568,9 +571,7 @@
         #title{
           margin-top:-10px;
         }
-        .mapboxgl-popup {
-          max-width: 250px !important;
-        }
+
         #legendCol1{
           margin-left: -10px !important;
         }
@@ -583,13 +584,13 @@
         font-size:11px !important;
         }
         #title{
-          font-size:13px;
+          font-size:14px;
         }
         .subtitle{
           font-size:12px;
         }
         .active{
-        transform:translate3d(-230px,0,0);
+        transform:translate3d(-180px,0,0);
         }
         .label{
         font-size:10px;
@@ -625,6 +626,10 @@
         margin-left: -20px !important;
         }
 
+        .marginTop20,.marginTop10{
+          margin-top: -18px;
+        }
+
        .mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
        .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip,
        .mapboxgl-popup-anchor-center .mapboxgl-popup-tip,
@@ -645,15 +650,20 @@
          width:100px;
        }
       }
-      @media screen and (max-width: 500px) {
-        .mapboxgl-popup {
-          transform:none !important;
-          top: 20px;
-          left: 0;
-          right: 0;
-          margin-left: auto;
-          margin-right: auto;
-        }
+      @media screen and (max-width: 550px) {
+        .mapboxgl-popup{
+              transform:none !important;
+              top: 20px;
+              left: 0;
+              right: 0;
+              margin-left: auto;
+              margin-right: auto;
+          }
+
+          .mapboxgl-popup-close-button{
+            padding-top: 2px;
+            transform:scale(2.8);
+          }
       }
       </style>
    </head>
@@ -702,7 +712,7 @@
                </div>
             </div>
 
-            <div class='row itemWrapper marginTop20'>
+            <div class='row itemWrapper marginTop10'>
                <h2 class="subtitle"> Basins </h2>
             </div>
             <div class="itemWrapper">
